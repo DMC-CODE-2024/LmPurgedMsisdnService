@@ -58,7 +58,7 @@ public class ExceptionListHis {
     @Column(name="tac")
     String tac;
 
-    @Column(name="remarks")
+    @Column(name="remark")
     String remarks;
 
     @Column(name="operation")
