@@ -112,7 +112,7 @@ public class FileService implements IFileService {
     public void moveFile(FileDto file, String moveFilePath) {
         try {
             logger.info("Moving File:{} to {}", file.getFileName(), moveFilePath);
-            Files.move(Paths.get(file.getFileName()), Paths.get(moveFilePath + "/" + file.getName()));
+            Files.move(Paths.get(file.getFileName()), Paths.get(moveFilePath + "/" + file.getName())  , StandardCopyOption.REPLACE_EXISTING );
             logger.info("Moved File:{} to {}", file.getFileName(), moveFilePath);
         } catch (IOException e) {
             e.printStackTrace();
