@@ -44,11 +44,8 @@ public class DbTransactionsService implements IDbTransactions {
     @Transactional
     public boolean dbTransaction(GreyList greyList) {
 
-        // delete from grey list
         try {
             greyListRepository.deleteById(Math.toIntExact(greyList.getId()));
-
-            // insert into grey list history table
 
             GreyListHis greyListHis = GreyListHisBuilder.forInsert(greyList, 0);
             greyListHisRepository.save(greyListHis);
@@ -66,8 +63,6 @@ public class DbTransactionsService implements IDbTransactions {
         try {
             blackListRepository.deleteById(Math.toIntExact(blackList.getId()));
 
-            // insert into grey list history table
-
             BlackListHis blackListHis = BlackListHisBuilder.forInsert(blackList, 0);
             blackListHisRepository.save(blackListHis);
         } catch (Exception e) {
@@ -83,8 +78,6 @@ public class DbTransactionsService implements IDbTransactions {
     public boolean dbTransaction(ExceptionList exceptionList) {
         try {
             exceptionListRepository.deleteById(Math.toIntExact(exceptionList.getId()));
-
-            // insert into grey list history table
 
             ExceptionListHis exceptionListHis = ExceptionListHisBuilder.forInsert(exceptionList, 0);
             exceptionListHisRepository.save(exceptionListHis);
@@ -102,8 +95,7 @@ public class DbTransactionsService implements IDbTransactions {
         try {
             imeiListRepository.deleteById(Math.toIntExact(imeiList.getId()));
 
-            // insert into imei list history table
-
+          
             ImeiListHis imeiListHis = ImeiListHisBuilder.forInsert(imeiList, 0, "delete");
             imeiListHisRepository.save(imeiListHis);
             BlackList blackListEntry = blackListRepository.findByImeiAndSource(imeiList.getImei(), "auto pairing");
@@ -126,8 +118,6 @@ public class DbTransactionsService implements IDbTransactions {
     public boolean dbTransaction(DuplicateDeviceDetail duplicateDeviceDetail) {
         try {
             duplicateDeviceDetailRepository.deleteById(Math.toIntExact(duplicateDeviceDetail.getId()));
-
-            // insert into grey list history table
 
             DuplicateDeviceDetailHis duplicateDeviceDetailHis = DuplicateDeviceDetailHisBuilder.forInsert(duplicateDeviceDetail, 0,"delete");
             duplicateDeviceDetailHisRepository.save(duplicateDeviceDetailHis);
