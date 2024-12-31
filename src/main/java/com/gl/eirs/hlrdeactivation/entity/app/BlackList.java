@@ -59,7 +59,7 @@ public class BlackList {
     @Column(name="tac")
     String tac;
 
-    @Column(name="remarks")
+    @Column(name="remark")
     String remarks;
 
 }
