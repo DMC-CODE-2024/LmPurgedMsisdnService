@@ -15,24 +15,11 @@ public class ImeiListHis {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="imsi")
-    String imsi;
-
-    @Column(name="msisdn")
-    String msisdn;
-
-    @Column(name="imei")
-    String imei;
-
     @Column(name="file_name")
     String fileName;
 
-    @Column(name="expiry_date")
-    LocalDateTime expiryDate;
-
     @Column(name="gsma_status")
     String gsmaStatus;
-
 
     @Column(name="pairing_date")
     LocalDateTime pairingDate;
@@ -40,8 +27,20 @@ public class ImeiListHis {
     @Column(name="record_time")
     LocalDateTime recordTime;
 
+    @Column(name="msisdn")
+    String msisdn;
+
+    @Column(name="imei")
+    String imei;
+
+    @Column(name="imsi")
+    String imsi;
+
     @Column(name="created_on")
     Timestamp createdOn;
+
+//   @Column(name="modified_on")
+//    Timestamp modifiedOn;
 
     @Column(name="operator")
     String operatorName;
@@ -49,17 +48,27 @@ public class ImeiListHis {
     @Column(name="allowed_days")
     String allowedDays;
 
+    @Column(name="expiry_date")
+    LocalDateTime expiryDate;
+
     @Column(name="pair_mode")
     String pairMode;
 
-    @Column(name="actual_imei")
+    @Column(name = "actual_imei")
     String actualImei;
+
+    @Column(name="txn_id")
+    String txnId;
+
+    @Column(name = "request_id")
+    String requestId;
 
     @Column(name = "action")
     String action;
 
     @Column(name = "action_remark")
     String actionRemark;
+
 
 
 }
