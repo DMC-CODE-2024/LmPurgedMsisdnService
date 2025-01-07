@@ -24,8 +24,13 @@ public class ImeiListHisBuilder {
         imeiListHis.setAllowedDays(imeiList.getAllowedDays());
         imeiListHis.setExpiryDate(imeiList.getExpiryDate());
         imeiListHis.setPairMode(imeiList.getPairMode());
-        imeiListHis.setActionRemark(remarks);
         imeiListHis.setAction(action);
+        imeiListHis.setActualImei(imeiList.getActualImei());
+        imeiListHis.setActionRemark(remarks);
+
+        imeiListHis.setTxnId(imeiList.getTxnId());
+        imeiListHis.setRequestId(imeiList.getRequestId());
+
         return imeiListHis;
     }
 }
